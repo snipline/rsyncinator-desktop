@@ -13,6 +13,7 @@
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
     "@rollup/plugin-typescript": "^8.0.0",
+    "@tailwindcss/forms": "^0.3.4",
     "@tauri-apps/cli": "*",
     "@tsconfig/svelte": "^2.0.0",
     "rollup": "^2.3.4",
@@ -28,6 +29,10 @@
   },
   "dependencies": {
     "@tauri-apps/api": "*",
-    "sirv-cli": "^1.0.0"
+    "@tauri-apps/tauri-forage": "*",
+    "autoprefixer": "^9.8.8",
+    "postcss": "^7.0.39",
+    "sirv-cli": "^1.0.0",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
   }
 }
