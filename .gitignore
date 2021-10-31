@@ -1,5 +1,4 @@
 /node_modules/
 /public/build/
 .DS_Store
-/src-tauri/Cargo.toml
 /src-tauri/target
