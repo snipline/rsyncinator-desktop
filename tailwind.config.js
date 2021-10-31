@@ -3,6 +3,7 @@ module.exports = {
   purge: {
     content: [
       "./src/**/*.svelte",
+      "./public/index.html",
     ],
     enabled: production // disable purge in dev
   },
@@ -11,7 +12,11 @@ module.exports = {
     extend: {},
   },
   variants: {
-    extend: {},
+    extend: {
+      backgroundColor: ['disabled', 'focus', 'active'],
+      opacity: ['disabled'],
+      textColor: ['disabled']
+    },
   },
   plugins: [
     require('@tailwindcss/forms')
