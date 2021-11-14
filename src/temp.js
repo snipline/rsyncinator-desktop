@@ -20,8 +20,8 @@ export function longFormattedSshKey(model) {
       (model.selectedConnection !== connectionType.Local)
   ) {
     let formattedSshKey =
-    !model.sshKey.length === 0 ? ` -i ${model.formattedSshKey}` : '';
-    return ` --rsh 'ssh -oPort=${model.sshPort}${model.sshKey}'`;
+    model.sshKey.length !== 0 ? ` -i ${model.sshKey}` : '';
+    return ` --rsh 'ssh${model.sshPort ? ` -oPort=${model.sshPort}` : ''}${formattedSshKey}'`;
   } else {
     return '';
   }
@@ -29,7 +29,7 @@ export function longFormattedSshKey(model) {
 
 export function shortSsh(model) {
     if (model.configureSsh && model.selectedConnection !== connectionType.Local) {
-      return `e 'ssh -oPort=${model.sshPort}${
+      return `e 'ssh${model.sshPort ? ` -oPort=${model.sshPort}` : ''}${
         model.sshKey.trim().length !== 0 ? ` -i ${model.sshKey}` : ''
       }'`;
     }
@@ -37,7 +37,7 @@ export function shortSsh(model) {
   }
 export function longSsh(model) {
     if (model.configureSsh && model.selectedConnection !== connectionType.Local) {
-      return ` --rsh 'ssh -oPort=${model.sshPort}${
+      return ` --rsh 'ssh ${model.sshPort ? `-oPort=${model.sshPort}` : ''}${
         model.sshKey.trim().length !== 0 ? ` -i ${model.sshKey}` : ''
       }'`;
     }

@@ -18,7 +18,7 @@
       bind:checked={value}
       on:change={(e) => change(e.target.checked)}
       type="checkbox"
-      class="bg-gray-100 disabled:bg-gray-200 focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 dark:bg-gray-900 rounded disabled:opacity-25 disabled:cursor-not-allowed"
+      class="bg-white disabled:bg-gray-300 focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 dark:bg-gray-900 rounded disabled:opacity-25 disabled:cursor-not-allowed"
       {disabled}
     />
   </div>

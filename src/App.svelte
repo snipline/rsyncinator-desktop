@@ -12,9 +12,9 @@
   let fileSizeLimitDropdownOptions = ["B", "K", "M", "G"];
 </script>
 
-<main>
+<main class="">
   <span
-    class="my-4 mx-auto text-center w-full items-stretc relative z-0 inline-flex shadow-sm rounded-md"
+    class="mb-4 mt-0 mx-auto text-center w-full items-stretc relative z-0 inline-flex shadow-sm rounded-md"
   >
     <GroupedButton
       on:update={() => ($model.selectedConnection = connectionType.Local)}
@@ -183,7 +183,9 @@
       info="Use short flags where possible"
     />
   </div>
-  <div class="grid grid-flow-row grid-cols-1 md:grid-cols-4 gap-4 text-left">
+  <div
+    class="mt-4 grid grid-flow-row grid-cols-1 md:grid-cols-4 gap-4 text-left"
+  >
     <TextField
       placeholder="e.g. 500"
       id="limitBandwidth"
@@ -221,6 +223,25 @@
       on:dropdownChanged={(event) =>
         ($model.fileSizeLimitUnit = event.detail.value)}
     />
+    {#if $model.configureSsh}
+      <TextField
+        id="sshPort"
+        bind:value={$model.sshPort}
+        on:change={(event) => ($model.sshPort = event.detail.value)}
+        label="SSH Port"
+        placeholder="22"
+        type="number"
+        min="0"
+        step="1"
+      />
+      <TextField
+        id="sshKey"
+        bind:value={$model.sshKey}
+        on:change={(event) => ($model.sshKey = event.detail.value)}
+        label="SSH Key"
+        placeholder="~/.ssh/id_rsa"
+      />
+    {/if}
   </div>
   <Hr />
   <Preview model={$model} />
@@ -235,4 +256,3 @@
     @apply bg-indigo-700;
   }
 </style>
-

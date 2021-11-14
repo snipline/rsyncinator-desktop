@@ -22,7 +22,7 @@
         value={valueServer}
         on:input={(e) => changeServer(e.target.value)}
         id={idServer}
-        class="bg-gray-100 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md dark:border-gray-600 dark:bg-gray-900 dark:text-white"
+        class="bg-white dark:bg-gray-800 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md dark:border-gray-600 dark:bg-gray-900 dark:text-white"
         placeholder={labelServer}
       />
     </div>
@@ -35,7 +35,7 @@
       {value}
       on:input={(e) => change(e.target.value)}
       {id}
-      class="bg-gray-100 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md dark:border-gray-600 dark:bg-gray-900 dark:text-white"
+      class="bg-white dark:bg-gray-800 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md dark:border-gray-600 dark:dark:text-gray-100"
       placeholder={label}
     />
   </div>

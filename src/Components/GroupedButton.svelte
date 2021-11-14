@@ -19,7 +19,7 @@
     if (active) {
       return "transition ease-in bg-indigo-600 text-indigo-100 hover:bg-indigo-500 dark:border-gray-600 ";
     } else {
-      return "transition ease-in border-gray-300 bg-gray-100 hover:bg-gray-50 dark:bg-black dark:text-gray-100 dark:border-gray-600 text-gray-700 ";
+      return "transition ease-in border-gray-300 bg-white dark:hover:bg-gray-700 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600 text-gray-700 ";
     }
   };
 

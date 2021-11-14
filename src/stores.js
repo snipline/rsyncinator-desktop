@@ -70,7 +70,7 @@ $: formattedCommand = ($model) => {
         $model.verbose ? ' --verbose' : ''
       }${$model.humanReadable ? ' --human-readable' : ''}${
         $model.copySymlinks && !$model.archiveMode ? ' --links' : ''
-      }${longSsh($model)}${longFormattedSshKey($model)}${
+      }${longFormattedSshKey($model)}${
         formattedFileSizeLimit($model)
       }${formattedBandwidthLimit($model)}${formattedIncludeFiles($model)}${
         formattedExcludeFiles($model)
