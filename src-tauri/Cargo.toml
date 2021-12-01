@@ -1,9 +1,9 @@
 [package]
-name = "app"
+name = "rsyncinator-desktop"
 version = "0.1.0"
-description = "A Tauri App"
-authors = ["you"]
-license = ""
+description = "A GUI for generating rsync commands"
+authors = ["Mitchell Stanley"]
+license = "GNU GPLv3"
 repository = ""
 default-run = "app"
 edition = "2021"
