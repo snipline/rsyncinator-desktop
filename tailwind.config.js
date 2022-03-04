@@ -1,12 +1,9 @@
 const production = !process.env.ROLLUP_WATCH;
 module.exports = {
-  purge: {
-    content: [
-      "./src/**/*.svelte",
-      "./public/index.html",
-    ],
-    enabled: production // disable purge in dev
-  },
+  content: [
+    "./src/**/*.svelte",
+    "./public/index.html",
+  ],
   darkMode: 'media', // or 'media' or 'class'
   theme: {
     extend: {},
