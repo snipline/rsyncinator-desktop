@@ -225,6 +225,13 @@
     />
     {#if $model.configureSsh}
       <TextField
+        id="sshUser"
+        bind:value={$model.sshUser}
+        on:change={(event) => ($model.sshUser = event.detail.value)}
+        label="SSH User"
+        placeholder="brandosando"
+      />
+      <TextField
         id="sshPort"
         bind:value={$model.sshPort}
         on:change={(event) => ($model.sshPort = event.detail.value)}

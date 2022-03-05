@@ -1,6 +1,6 @@
 <script lang="ts">
   import { formattedCommand } from "./../stores.js";
-  import { isNotValid } from "./../temp.js";
+  import { isNotValid } from "./../helpers.js";
   import { invoke } from "@tauri-apps/api/tauri";
 
   export let model;

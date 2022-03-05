@@ -31,3 +31,4 @@ To build your own production version of the app first generate the web assets an
 ```
 npm run build && npm run tauri build
 ```
+
