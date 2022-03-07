@@ -6,6 +6,10 @@ This is the open source desktop and web app for Rsyncinator, the GUI tool for ge
 
 ⚠️ This tool is currently in early development so please be mindful of bugs and lack of features.
 
+**Like this app?**
+
+Please consider donating via the [Gumroad product page](https://snipline.gumroad.com/l/rsyncinator-desktop) which helps me to maintain and add new features!
+
 ## Installation
 
 Please see the releases directory for downloading the executables.
@@ -32,6 +36,7 @@ To build your own production version of the app first make sure [the Tauri prequ
 Additionally, for Linux you will need the following dependencies installed: `libxcb-shape`, `libxcb-xfixes`, and `xorg-dev`. You can install these in Ubuntu with `sudo apt install libxcb-xfixes0-dev libxcv-shape0-dev xorg-dev`.
 
 Finally, generate the web assets and then build the Tauri application.
+
 
 ```
 npm run build && npm run tauri build

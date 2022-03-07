@@ -1,9 +1,10 @@
 [package]
 name = "rsyncinator-desktop"
 version = "0.2.0"
-description = "Visually create rsync commands"
+description = "A GUI for generating rsync commands"
 authors = ["mitch stanley"]
-license = ""
+license = "GNU GPLv3"
+
 repository = ""
 default-run = "rsyncinator-desktop"
 edition = "2021"
