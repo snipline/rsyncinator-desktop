@@ -1,6 +1,7 @@
 <script lang="ts">
   import { formattedCommand } from "./../stores.js";
-  import { isNotValid } from "./../temp.js";
+  import { isNotValid } from "./../helpers.js";
+  import { invoke } from "@tauri-apps/api/tauri";
 
   export let model;
   let successMessage = "Command successfully copied";
@@ -9,26 +10,34 @@
   } transition ease-in w-full bg-indigo-600 text-white rounded p-4 shadow-md disabled:text-gray-500 disabled:bg-gray-300 hover:bg-indigo-500 active:bg-indigo-700 focus:bg-indigo-700 dark:disabled:bg-gray-700 dark:disabled:text-gray-400 dark:bg-indigo-500 dark:text-indigo-100`;
 
   function copy() {
-    navigator.clipboard.writeText(formattedCommand(model));
-    if (!("Notification" in window)) {
-      alert("This browser does not support desktop notification");
-    }
-
-    // Let's check whether notification permissions have already been granted
-    if (Notification.permission === "granted") {
-      // If it's okay let's create a notification
-      var notification = new Notification(successMessage);
-    }
-
-    // Otherwise, we need to ask the user for permission
-    else if (Notification.permission !== "denied") {
-      Notification.requestPermission().then(function (permission) {
-        // If the user accepts, let's create a notification
-        if (permission === "granted") {
-          var notification = new Notification("successMessage");
+    // navigator.clipboard.writeText(formattedCommand(model));
+    invoke("copy_to_clipboard", { copyString: formattedCommand(model) })
+      .then((message) => {
+        if (!("Notification" in window)) {
+          alert("This browser does not support desktop notification");
         }
+
+        // Let's check whether notification permissions have already been granted
+        if (Notification.permission === "granted") {
+          // If it's okay let's create a notification
+          var notification = new Notification(successMessage);
+        }
+
+        // Otherwise, we need to ask the user for permission
+        else if (Notification.permission !== "denied") {
+          Notification.requestPermission().then(function (permission) {
+            // If the user accepts, let's create a notification
+            if (permission === "granted") {
+              var notification = new Notification("successMessage");
+            }
+          });
+        }
+      })
+      .catch((error) => {
+        alert(
+          `Could not copy to clipboard. Check permissions and Linux users should install \`xorg-dev\`.\n\n ${error}`
+        );
       });
-    }
   }
 </script>
 
